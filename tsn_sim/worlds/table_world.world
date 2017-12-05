@@ -81,6 +81,7 @@
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
     <model name='wood_cube_10cm'>
+      <pose frame=''>1.10068 -0.021552 1.0 0 -0 0</pose>
       <link name='link'>
         <pose frame=''>0 0 0.05 0 -0 0</pose>
         <inertial>
@@ -138,9 +139,8 @@
           </material>
         </visual>
         <self_collide>0</self_collide>
-        <kinematic>1</kinematic>
+        <kinematic>0</kinematic>
       </link>
-      <pose frame=''>-0.857124 -1.28883 0 0 -0 0</pose>
     </model>
     <model name='table_marble'>
       <static>1</static>
