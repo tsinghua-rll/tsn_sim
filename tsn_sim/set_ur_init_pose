@@ -1,9 +1,0 @@
-#!/bin/bash
-# $FileName: set_ur_init_pose.sh
-# $Date: 04-12-2017
-# $Purpose: 
-# $LastModified: 2017年12月04日 星期一 23时42分34秒
-# $Author: Jeasine Ma [jeasinema[at]gmail[dot]com]
-
-rosservice call /gazebo/set_model_configuration '{ model_name: "robot", urdf_param_name: "robot_description", joint_names: [ "elbow_joint", "shoulder_lift_joint", "shoulder_pan_joint", "wrist_1_joint", "wrist_2_joint", "wrist_3_joint" ], joint_positions: [ 2.380, -1.701, 0.017, -0.674, 1.568, 9.605 ] }'
-echo "++++++"

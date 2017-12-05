@@ -320,6 +320,9 @@
       <light name='sun'>
         <pose frame=''>0 0 10 0 -0 0</pose>
       </light>
+      <light name='user_directional_light_0'>
+        <pose frame=''>0 0 1.5 -1.57 0 0</pose>
+      </light>
     </state>
     <model name='kinect'>
       <pose frame=''>-3.08377 3.97499 0.036 0 -0 0</pose>
@@ -586,5 +589,18 @@
       </link>
       <pose frame=''>-0.28067 -1.23193 0 0 -0 0</pose>
     </model>
+    <light name='user_directional_light_0' type='directional'>
+      <pose frame=''>-1.23015 -0.075503 1 0 -0 0</pose>
+      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <direction>0.1 0.1 -0.9</direction>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>1</cast_shadows>
+    </light>
   </world>
 </sdf>
