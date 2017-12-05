@@ -69,4 +69,5 @@ ask [@jeasinema](mailto:jeasinema@gmail.com) to do it.
 #### Set object position dynamically
 
 use this topic `/gazebo/set_model_state`
+you can have a look at `script/move_object.py`
 
