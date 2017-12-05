@@ -15,6 +15,7 @@
       <direction>-0.5 0.1 -0.9</direction>
     </light>
     <model name='ground_plane'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
       <static>1</static>
       <link name='link'>
         <collision name='collision'>
@@ -81,7 +82,7 @@
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
     <model name='wood_cube_10cm'>
-      <pose frame=''>1.10068 -0.021552 1 0 -0 0</pose>
+      <pose frame=''>0.4 0.6 0.963753 -6.4e-05 5.5e-05 -9.6e-05</pose>
       <link name='link'>
         <pose frame=''>0 0 0.05 0 -0 0</pose>
         <inertial>
@@ -144,7 +145,7 @@
     </model>
     <model name='table_marble'>
       <static>1</static>
-      <pose frame=''>0.329817 0.031197 0.648 0 -0 0</pose>
+      <pose frame=''>0 0 0.648 0 -0 0</pose>
       <link name='link'>
         <collision name='collision'>
           <geometry>
@@ -189,7 +190,7 @@
     </model>
     <model name='table_marble_0'>
       <static>1</static>
-      <pose frame=''>-3.22927 -0.276818 0.648 0 -0 0</pose>
+      <pose frame=''>-2.6 0 0.648 0 -0 0</pose>
       <link name='link'>
         <collision name='collision'>
           <geometry>
@@ -232,100 +233,8 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-    <state world_name='default'>
-      <sim_time>2383 568000000</sim_time>
-      <real_time>513 769311822</real_time>
-      <wall_time>1512445535 472972759</wall_time>
-      <iterations>512044</iterations>
-      <model name='beer'>
-        <pose frame=''>0.799981 0.600017 0.964763 -1e-05 -1.7e-05 -0.001674</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose frame=''>0.799979 0.600019 1.07976 -1e-05 -1.7e-05 -0.001674</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>2.49777 -1.60264 3.4532 -2.76025 -0.410171 -0.633608</acceleration>
-          <wrench>0.974129 -0.62503 1.34675 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='coke_can'>
-        <pose frame=''>0.999996 0.599951 0.960101 -0.012456 0.001653 3.7e-05</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose frame=''>0.999996 0.599951 0.960101 -0.012456 0.001653 3.7e-05</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 1e-06 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='ground_plane'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='kinect'>
-        <pose frame=''>0 1 1.6 0 0.25 -1.57</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose frame=''>0 1 1.6 0 0.25 -1.57</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='plastic_cup'>
-        <pose frame=''>0.6 0.6 0.971408 4.9e-05 -3e-05 3.8e-05</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose frame=''>0.599998 0.599997 1.03641 4.9e-05 -3e-05 3.8e-05</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0.149973 -0.109204 -0.001187 -1.63803 1.07634 3.14056</acceleration>
-          <wrench>0.008983 -0.006541 -7.1e-05 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='table_marble'>
-        <pose frame=''>0 0 0.648 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose frame=''>0 0 0.648 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='table_marble_0'>
-        <pose frame=''>-2.6 0 0.648 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose frame=''>-2.6 0 0.648 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='wood_cube_10cm'>
-        <pose frame=''>0.4 0.6 0.963753 -6.4e-05 5.5e-05 -9.6e-05</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose frame=''>0.400003 0.600003 1.01375 -6.4e-05 5.5e-05 -9.6e-05</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <light name='sun'>
-        <pose frame=''>0 0 10 0 -0 0</pose>
-      </light>
-      <light name='user_directional_light_0'>
-        <pose frame=''>0 0 1.5 -1.57 0 0</pose>
-      </light>
-    </state>
     <model name='kinect'>
-      <pose frame=''>-3.08377 3.97499 0.036 0 -0 0</pose>
+      <pose frame=''>0 1 1.6 0 0.25 -1.57</pose>
       <link name='link'>
         <inertial>
           <mass>0.1</mass>
@@ -417,6 +326,7 @@
       </camera>
     </gui>
     <model name='beer'>
+      <pose frame=''>0.8 0.6 1.0 0 0 0</pose>
       <link name='link'>
         <pose frame=''>0 0 0.115 0 -0 0</pose>
         <inertial>
@@ -472,6 +382,7 @@
       <pose frame=''>-0.227761 0.378353 0 0 -0 0</pose>
     </model>
     <model name='coke_can'>
+      <pose frame=''>1.0 0.6 1.0 0 0 0</pose>
       <link name='link'>
         <inertial>
           <pose frame=''>-0.01 -0.012 0.15 0 -0 0</pose>
@@ -528,6 +439,7 @@
       <pose frame=''>-0.486836 1.31625 0 0 -0 0</pose>
     </model>
     <model name='plastic_cup'>
+      <pose frame=''>0.6 0.6 1.0 0 0 0</pose>
       <link name='link'>
         <pose frame=''>0 0 0.065 0 -0 0</pose>
         <inertial>
@@ -590,7 +502,7 @@
       <pose frame=''>-0.28067 -1.23193 0 0 -0 0</pose>
     </model>
     <light name='user_directional_light_0' type='directional'>
-      <pose frame=''>-1.23015 -0.075503 1 0 -0 0</pose>
+      <pose frame=''>0 1.0 1.5 -1.57 0 0</pose>
       <diffuse>0.5 0.5 0.5 1</diffuse>
       <specular>0.1 0.1 0.1 1</specular>
       <direction>0.1 0.1 -0.9</direction>
