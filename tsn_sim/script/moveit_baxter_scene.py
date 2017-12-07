@@ -4,7 +4,7 @@
 # File Name : moveit_baxter.py
 # Purpose :
 # Creation Date : 06-12-2017
-# Last Modified : 2017年12月07日 星期四 12时10分21秒
+# Last Modified : 2017年12月07日 星期四 19时36分49秒
 # Created By : Jeasine Ma [jeasinema[at]gmail[dot]com]
 
 import sys
@@ -14,6 +14,7 @@ import moveit_commander
 import moveit_msgs.msg
 import geometry_msgs.msg
 from sensor_msgs.msg import JointState
+from geometry_msgs.msg import PoseStamped
 
 
 def joint_state_callback(data):
@@ -45,46 +46,36 @@ def main(args):
     rospy.Subscriber("/robot/joint_states", JointState, joint_state_callback)
     robot = moveit_commander.RobotCommander()
     scene = moveit_commander.PlanningSceneInterface()
+    rospy.sleep(2) # essential for add scene!!!
 
-    print(robot.get_current_state()) 
+    print(robot.get_current_state())
     print(robot.get_group_names())
     group = moveit_commander.MoveGroupCommander("right_arm")
-    print(group.get_current_pose()) # end effector pose
+    # set planning scene
+    desktop_plane = PoseStamped()
+    desktop_plane.header.frame_id = robot.get_planning_frame()
+    desktop_plane.pose.position.x = 0.8
+    desktop_plane.pose.position.y = -0.4
+    desktop_plane.pose.position.z = 0.0
+    desktop_plane.pose.orientation.w = 1.0
+    scene.add_box("table", desktop_plane, (1, 1.2, 0.01))
+
+    print(group.get_current_pose())
     set_target_pose(group)
-    print(robot.get_current_state()) 
-    print(group.get_current_pose()) # end effector pose
+    rospy.spin()
 
 
 def set_target_pose(group):
-    # cannot set pose target and joint target in the same time
-    # set target pose of end point
+    # just control the target pose of end point
     pose_target = geometry_msgs.msg.Pose()
     pose_target.orientation.w = 0.0
     pose_target.orientation.x = 0.0
     pose_target.orientation.y = 0.0
     pose_target.orientation.z = 0.0
-    pose_target.position.x = 0.6
-    pose_target.position.y = 0.0
-    pose_target.position.z = 0.3
-    # set_pose_target = set_position_target + set_orintation_target
-    # group.set_pose_target(pose_target)
-    group.set_position_target([
-        pose_target.position.x, 
-        pose_target.position.y, 
-        pose_target.position.z
-    ])
-    
-    # set joint target(as a dict) 
-    group.set_joint_value_target({
-        "right_w0" : 0.6,
-        "right_w1" : 0.6,
-        "right_w2" : 0.6,
-        "right_w2" : 0.6,
-    })
-    
-    # set tolarence
-    group.set_goal_tolerance(0.1) 
-
+    pose_target.position.x = 0.0
+    pose_target.position.y = -0.5
+    pose_target.position.z = 1.5
+    group.set_pose_target(pose_target)
     group.plan()
     print(group.go())  # true for success, false for failed
 
