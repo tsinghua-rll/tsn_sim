@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <launch>
 
+  <!-- Remap joint_states -->
+  <node pkg="tsn_sim" type="remap_joint_states_baxter.py" name="remap_joint_states"/>
+
   <!-- these are the arguments you can pass this launch file, for example paused:=true -->
   <arg name="paused" default="false"/>
   <arg name="use_sim_time" default="true"/>

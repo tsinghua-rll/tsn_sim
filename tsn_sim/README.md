@@ -14,7 +14,7 @@ $ roslaunch tsn_sim ur5.launch
 $ roslaunch ur5_moveit_config ur5_moveit_planning_execution.launch sim:=true
 ```
 
-3. launch ur5 rviz moveit planner
+3. launch ur5 rviz moveit planner(optional)
 ```bash
 $ roslaunch ur5_moveit_config moveit_rviz.launch config:=true
 ```
@@ -47,6 +47,11 @@ $ rosrun baxter_interface joint_trajectory_action_server.py -l both
 ```bash
 $ roslaunch baxter_moveit_config demo_baxter.launch right_electric_gripper:=true left_electric_gripper:=true
 ```
+or 
+```bash
+$ roslaunch baxter_moveit_config move_group.launch right_electric_gripper:=true left_electric_gripper:=true
+```
+if it occrus some error msg like "no semantic description" when  running the 2nd command, just run the 1st command then C-C it and run the 2nd command again.
 
 #### Env parameters:
 
