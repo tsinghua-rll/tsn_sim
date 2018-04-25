@@ -1,1 +1,1 @@
-/opt/ros/kinetic/share/catkin/cmake/toplevel.cmake
+/home/robot/ros_catkin_ws/install_isolated/share/catkin/cmake/toplevel.cmake

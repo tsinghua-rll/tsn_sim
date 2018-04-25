@@ -4,7 +4,7 @@
 # File Name : moveit_baxter.py
 # Purpose :
 # Creation Date : 06-12-2017
-# Last Modified : 2017年12月06日 星期三 21时11分24秒
+# Last Modified : 2018年02月23日 星期五 11时55分15秒
 # Created By : Jeasine Ma [jeasinema[at]gmail[dot]com]
 
 import sys
@@ -48,9 +48,11 @@ def set_target_pose(group):
     pose_target.orientation.y = 0.0
     pose_target.orientation.z = 0.0
     pose_target.position.x = 0.4
-    pose_target.position.y = 0.1
-    pose_target.position.z = 0.5
-    group.set_pose_target(pose_target)
+    pose_target.position.y = 0.0
+    pose_target.position.z = 0.3
+    group.clear_pose_targets()
+    # group.set_pose_target(pose_target)
+    group.set_position_target((0.4, 0, 0.5))
     group.plan()
     print(group.go())  # true for success, false for failed
 
