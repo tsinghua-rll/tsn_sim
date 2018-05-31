@@ -1,0 +1,7 @@
+[submodule "moveit_robots"]
+        path = ./moveit_robots
+        url = https://github.com/ros-planning/moveit_robots.git
+
+[submodule "universal_robot"]
+        path = ./universal_robot 
+        url = https://github.com/ros-industrial/universal_robot.git
