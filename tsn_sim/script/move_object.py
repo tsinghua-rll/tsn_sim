@@ -24,12 +24,18 @@ available_object = [
 
 move_object_topic = "/gazebo/set_model_state"
 
-def set_object_pose(publisher, object_name):
+def set_object_pose(publisher, object_name, xyz=None):
     state = ModelState()
     state.model_name = object_name 
-    state.pose.position.x = np.random.random(1)
-    state.pose.position.y = np.random.random(1)
-    state.pose.position.z = np.random.random(1)
+    if xyz:
+        state.pose.position.x = xyz[0]
+        state.pose.position.y = xyz[1]
+        state.pose.position.z = xyz[2]
+    else:
+        state.pose.position.x = np.random.rand()
+        state.pose.position.y = np.random.rand()
+        state.pose.position.z = np.random.rand()
+
     publisher.publish(state)
     rospy.loginfo("set pose for model {}".format(object_name))
 
@@ -37,8 +43,9 @@ def main(argv):
     pub = rospy.Publisher(move_object_topic, ModelState, queue_size=10)
     rospy.init_node("demo_set_object_pose", anonymous=True) 
     rate = rospy.Rate(1) # 1 Hz
-    while not rospy.is_shutdown():
-        set_object_pose(pub, available_object[randint(0, len(available_object)-1)])
+    while not rospy.is_shutdown(): # we must call set_object_pose for more than one time
+        # set_object_pose(pub, available_object[randint(0, len(available_object)-1)])
+        set_object_pose(pub, 'plastic_cup', [0,-0.9,1.0])
         rate.sleep()
 
 if __name__ == '__main__':
